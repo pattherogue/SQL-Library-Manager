@@ -30,6 +30,16 @@ module.exports = (sequelize, DataTypes) => {
     author: {
       type: Sequelize.STRING,
       allowNull: false,
+      validation: {
+        notNull: {
+          msg: 'Input for "author" needed',
+        },
+        notEmpty: {
+          msg: 'Proper input for "author" needed',
+        }
+      }
+
+    },
     genre: DataTypes.STRING,
     year: DataTypes.INTEGER
   }, {
