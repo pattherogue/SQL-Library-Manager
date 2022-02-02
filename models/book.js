@@ -25,9 +25,11 @@ module.exports = (sequelize, DataTypes) => {
           msg: 'Proper input for "title" needed',
         }
       },
-      
+
     }, 
-    author: DataTypes.STRING,
+    author: {
+      type: Sequelize.STRING,
+      allowNull: false,
     genre: DataTypes.STRING,
     year: DataTypes.INTEGER
   }, {
