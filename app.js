@@ -12,7 +12,7 @@ var app = express();
 
 (async () => {
   try {
-    await.sequelize.authenticate();
+    await sequelize.authenticate();
     console.log('Connection properly established.');
   } catch (error) {
     console.log('Database connection error', error);
@@ -20,9 +20,11 @@ var app = express();
     try {
       await sequelize.sync();
       console.log('Database successfully synced!');
+    } catch (error) {
+      console.log('Database sync error', error);
     }
   }
-})
+})();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
