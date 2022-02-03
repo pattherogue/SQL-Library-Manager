@@ -13,6 +13,7 @@ var app = express();
 (async () => {
   try {
     await.sequelize.authenticate();
+    console.log('Connection properly established.');
   }
 })
 
