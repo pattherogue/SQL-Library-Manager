@@ -11,7 +11,9 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 (async () => {
-  
+  try {
+    await.sequelize.authenticate();
+  }
 })
 
 // view engine setup
