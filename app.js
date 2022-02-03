@@ -14,6 +14,8 @@ var app = express();
   try {
     await.sequelize.authenticate();
     console.log('Connection properly established.');
+  } catch (error) {
+    console.log('Connection error', error);
   }
 })
 
