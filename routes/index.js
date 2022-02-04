@@ -4,7 +4,7 @@ var Book = require('../models').Book;
 
 /* GET home page. */
 router.get('/books', asyncHandler(req, res) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { books: books });
 });
 
 module.exports = router;
