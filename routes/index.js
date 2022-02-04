@@ -3,8 +3,9 @@ var router = express.Router();
 var Book = require('../models').Book;
 
 /* GET home page. */
-router.get('/books', asyncHandler(req, res) {
+router.get('/books', asyncHandler(async (req, res) => {
+  const books = await Book.findAll();
   res.render('index', { books: books });
-});
+}));
 
 module.exports = router;
