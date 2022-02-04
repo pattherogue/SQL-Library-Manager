@@ -3,7 +3,7 @@ var router = express.Router();
 var Book = require('../models').Book;
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/books', asyncHandler(req, res) {
   res.render('index', { title: 'Express' });
 });
 
