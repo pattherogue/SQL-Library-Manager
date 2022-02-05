@@ -13,6 +13,10 @@ function asyncHandler(cb) {
 }
 
 /* GET home page. */
+router.get('/', (req, res, next) => {
+  res.redirect("/books")
+});
+
 router.get('/books', asyncHandler(async (req, res) => {
   const books = await Book.findAll();
   res.render('index', { books: books });
