@@ -18,4 +18,8 @@ router.get('/books', asyncHandler(async (req, res) => {
   res.render('index', { books: books });
 }));
 
+render.get('/books/new', (req, res) => {
+  
+})
+
 module.exports = router;
