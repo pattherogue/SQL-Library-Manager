@@ -19,7 +19,8 @@ router.get('/books', asyncHandler(async (req, res) => {
 }));
 
 render.get('/books/new', (req, res) => {
-  
+  const books = await Book.findAll();
+  res.render('new-book');
 })
 
 module.exports = router;
