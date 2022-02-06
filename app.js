@@ -47,6 +47,7 @@ app.use(function(req, res, next) {
 // 404 error handler
 app.use(function(err, req, res, next) {
   // create new Error() 
+  // user friendly message 
   const err = new Error("Page does not exist.");
   // status property to 404
   error.status = 404;
