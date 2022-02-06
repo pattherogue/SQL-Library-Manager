@@ -52,8 +52,9 @@ app.use(function(err, req, res, next) {
   // status property to 404
   error.status = 404;
   res.status(404).render("page-not-found", { error })
- 
-  // render the error page
+});
+
+  // Global error handler
   res.status(err.status || 500);
   res.render('error');
 });
