@@ -49,8 +49,8 @@ app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   const err = new Error("Page does not exist.");
   error.status = 404;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
+  res.status(404).render("page-not-found", { error })
+ 
   // render the error page
   res.status(err.status || 500);
   res.render('error');
