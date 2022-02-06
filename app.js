@@ -64,7 +64,7 @@ app.use((err, req, res, next) => {
     // user friendly message
     err.message = err.rmessage || 'Server error';
     res.locals.error = err;
-    res.status(err.status || 500).render('error', { error });
+    res.status(err.status || 500).render('error', { err });
   }
 });
 
