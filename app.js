@@ -60,10 +60,13 @@ app.use((err, req, res, next) => {
   if(err.status === 404) {
     res.render("page-not-found", { error })
   } else {
+    //log err object status and message to console
     console.log('GLobal error 500')
     // user friendly message
     err.message = err.rmessage || 'Server error';
     res.locals.error = err;
+    // render error template
+    // pass { err }
     res.status(err.status || 500).render('error', { err });
   }
 });
