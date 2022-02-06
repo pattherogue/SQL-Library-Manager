@@ -46,7 +46,7 @@ app.use(function(req, res, next) {
 });
 
 // 404 error handler
-app.use(req, res) {
+app.use((req, res) {
   // create new Error() 
   // user friendly message 
   const err = new Error("Page does not exist.");
@@ -56,16 +56,14 @@ app.use(req, res) {
 });
 
 // Global error handler
-app.use((err, req res, next) => {
+app.use((err, req, res, next) => {
   if(err.status === 404) {
     res.render("page-not-found", { error })
   } else {
     err.message = err.rmessage || 'Server error';
     res.locals.error = err;
+    res.status(err.status || 500).render('error', { error });
   }
-})
-  res.status(err.status || 500);
-  res.render('error');
 });
 
 module.exports = app;
