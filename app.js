@@ -44,10 +44,11 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
-// error handler
+// 404 error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
+  // create new Error() 
   const err = new Error("Page does not exist.");
+  // status property to 404
   error.status = 404;
   res.status(404).render("page-not-found", { error })
  
