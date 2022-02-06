@@ -49,7 +49,7 @@ app.use(function(req, res, next) {
 app.use((req, res) => {
   // create new Error() 
   // user friendly message 
-  const err = new Error("Page does not exist.");
+  const error = new Error("Page does not exist.");
   // status property to 404
   error.status = 404;
   res.status(404).render("page-not-found", { error })
