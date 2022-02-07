@@ -12,21 +12,24 @@ function asyncHandler(cb) {
   }
 }
 
-/* GET Home Route. */
+/* get / - Home Route. */
 router.get('/', (req, res, next) => {
   res.redirect("/books")
 });
 
-/* Get Books */
+/* get /books */
 router.get('/books', asyncHandler(async (req, res) => {
   const books = await Book.findAll();
   res.render('index', { books: books });
 }));
 
-/* Render Book Form */
+/* get /books/new */
 render.get('/books/new', asyncHandler(async(req, res) => {
   const books = await Book.findAll();
   res.render('new-book');
 }));
+
+/* get /books/:id */
+router.get('/books/:id, ')
 
 module.exports = router;
