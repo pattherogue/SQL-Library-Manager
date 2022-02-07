@@ -43,6 +43,9 @@ router.get('/books/:id',
     } catch (error) {
       if (error.name === "SequelizeValidationError") {
         book = await Book.build(req.body);
+        res.render('new-book', {book, errors: error.errors, title: 'New Book'});
+      } else {
+        throw error;
       }
     }
   }));
