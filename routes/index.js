@@ -42,7 +42,7 @@ router.get('/books/:id',
       res.redirect('/books');
     } catch (error) {
       if (error.name === "SequelizeValidationError") {
-        
+        book = await Book.build(req.body);
       }
     }
   }));
