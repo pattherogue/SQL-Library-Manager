@@ -39,7 +39,10 @@ router.get('/books/:id',
     let book;
     try {
       book = await Book.create(req.body);
+      res.redirect('/books');
+    } catch (error) {
+      
     }
-  }))
+  }));
 
 module.exports = router;
