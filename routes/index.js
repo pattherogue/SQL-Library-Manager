@@ -24,7 +24,7 @@ router.get('/books', asyncHandler(async (req, res) => {
 }));
 
 router.post('/books/new', asyncHandler(async(req, res) => {
-  
+
 }))
 
 /* get /books/new */
@@ -36,7 +36,10 @@ render.get('/books/new', asyncHandler(async(req, res) => {
 /* get /books/:id */
 router.get('/books/:id', 
   asyncHandler(async (req, res) => {
-    
+    let book;
+    try {
+      
+    }
   }))
 
 module.exports = router;
