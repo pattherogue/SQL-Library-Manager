@@ -38,7 +38,7 @@ router.get('/books/:id',
   asyncHandler(async (req, res) => {
     let book;
     try {
-      
+      book = await Book.create(req.body);
     }
   }))
 
