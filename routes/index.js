@@ -30,6 +30,9 @@ render.get('/books/new', asyncHandler(async(req, res) => {
 }));
 
 /* get /books/:id */
-router.get('/books/:id, ')
+router.get('/books/:id', 
+  asyncHandler(async (req, res) => {
+    
+  }))
 
 module.exports = router;
