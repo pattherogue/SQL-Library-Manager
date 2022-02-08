@@ -54,7 +54,7 @@ router.get('/books/:id',
   router.post('/books/:id', asyncHandler(async(req, res) => {
     let book;
     try {
-      
+      book = await Book.findByPk(req.params.id);
     }
   }))
 module.exports = router;
