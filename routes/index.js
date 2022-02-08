@@ -50,4 +50,8 @@ router.get('/books/:id',
     }
   }));
 
+  /* post /books/:id */
+  router.post('/books/:id', asyncHandler(async(req, res) => {
+    
+  }))
 module.exports = router;
