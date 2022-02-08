@@ -55,6 +55,9 @@ router.get('/books/:id',
     let book;
     try {
       book = await Book.findByPk(req.params.id);
+      if (book) {
+        await book.update(req.body);
+      }
     }
   }))
 module.exports = router;
