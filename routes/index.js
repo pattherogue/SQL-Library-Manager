@@ -62,7 +62,9 @@ router.get('/books/:id',
         res.render();
       }
     } catch (error) {
-      
+      if (error.name === "SequelizeValidationError") {
+        
+      }
     }
   }))
 module.exports = router;
