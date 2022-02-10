@@ -59,7 +59,7 @@ router.get('/books/:id',
         await book.update(req.body);
         res.redirect('/books');
       } else {
-        res.render();
+        res.render('page-not-found');
       }
     } catch (error) {
       if (error.name === "SequelizeValidationError") {
