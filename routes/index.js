@@ -34,8 +34,7 @@ render.get('/books/new', asyncHandler(async(req, res) => {
 }));
 
 /* get /books/:id */
-router.get('/books/:id', 
-  asyncHandler(async (req, res) => {
+router.get('/books/:id', asyncHandler(async (req, res) => {
     let book;
     try {
       book = await Book.create(req.body);
@@ -70,6 +69,6 @@ router.get('/books/:id',
         res.render('page-not-found');
       }
     }
-    
+
   }));
 module.exports = router;
