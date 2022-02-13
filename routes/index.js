@@ -23,10 +23,6 @@ router.get('/books', asyncHandler(async (req, res) => {
   res.render('index', { books: books });
 }));
 
-router.post('/books/new', asyncHandler(async(req, res) => {
-
-}))
-
 /* get /books/new */
 render.get('/books/new', asyncHandler(async(req, res) => {
   const books = await Book.findAll();
