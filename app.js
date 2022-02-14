@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+/* use the "require" method to import instance of sequelize*/
 const sequelize = require('./models/index').sequelize;
 
 var indexRouter = require('./routes/index');
@@ -69,7 +70,7 @@ app.use((err, req, res, next) => {
     // pass { err }
     res.status(err.status || 500).render('error', { err });
   }
-  
+
 });
 
 module.exports = app;
