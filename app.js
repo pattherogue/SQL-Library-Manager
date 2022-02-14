@@ -22,6 +22,7 @@ var app = express();
 
     try {
       await sequelize.sync();
+      /* sync the model with the database*/
       console.log('Database successfully synced!');
     } catch (error) {
       console.log('Database sync error', error);
