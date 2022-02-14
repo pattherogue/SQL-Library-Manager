@@ -14,6 +14,7 @@ var app = express();
 
 (async () => {
   try {
+    /* asynchronously connect to the database and log message*/
     await sequelize.authenticate();
     console.log('Connection properly established.');
   } catch (error) {
