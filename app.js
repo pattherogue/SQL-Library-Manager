@@ -3,32 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-/* use the "require" method to import instance of sequelize*/
-const sequelize = require('./models/index').sequelize;
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-const res = require('express/lib/response');
 
 var app = express();
-
-(async () => {
-  try {
-    /* asynchronously connect to the database and log message*/
-    await sequelize.authenticate();
-    console.log('Connection properly established.');
-  } catch (error) {
-    console.log('Database connection error', error);
-
-    try {
-      await sequelize.sync();
-      /* sync the model with the database*/
-      console.log('Database successfully synced!');
-    } catch (error) {
-      console.log('Database sync error', error);
-    }
-  }
-})();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -48,31 +27,15 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
-// 404 error handler
-app.use((req, res) => {
-  // create new Error() 
-  // user friendly message 
-  const error = new Error("Page does not exist.");
-  // status property to 404
-  error.status = 404;
-  res.status(404).render("page-not-found", { error })
-});
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-// Global error handler
-app.use((err, req, res, next) => {
-  if(err.status === 404) {
-    res.render("page-not-found", { error })
-  } else {
-    //log err object status and message to console
-    console.log('GLobal error 500')
-    // user friendly message
-    err.message = err.rmessage || 'Server error';
-    res.locals.error = err;
-    // render error template
-    // pass { err }
-    res.status(err.status || 500).render('error', { err });
-  }
-
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
 });
 
 module.exports = app;
