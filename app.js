@@ -33,7 +33,7 @@ app.use('/users', usersRouter);
     console.log('Connection established');
   } catch (error) { 
     /* log out message UN-SUCCESSFUL */ 
-    console.error('Connection error', error);
+    console.error('Connection Error - unable to connect', error);
   }
  
   try {
@@ -41,7 +41,9 @@ app.use('/users', usersRouter);
     await sequelize.sync();
     /* log out message SUCCESSFUL */ 
     console.log('Sync established');
-    
+  } catch (error) {
+     /* log out message UN-SUCCESSFUL */ 
+    console.error('Sync Error - unable to sync', error);
   }
     
 })
