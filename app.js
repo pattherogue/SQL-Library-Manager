@@ -27,11 +27,16 @@ app.use('/users', usersRouter);
 /* Test connection to the database and sync the model */
 (async () => {
   try {
-    /* use "sequelize.authenticate" method to connect */
+    /* use "sequelize.authenticate()" method to connect */
     await sequelize.authenticate();
-    /* log out message */
+    /* log out message SUCCESSFUL */ 
     console.log('Connection established');
+  } catch (error) { 
+    /* log out message UN-SUCCESSFUL */ 
+    console.error('Connection error', error);
   }
+ 
+    /* use "sequelize.sync()" method to sync */
 })
 
 // catch 404 and forward to error handler
