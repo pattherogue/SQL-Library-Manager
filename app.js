@@ -36,7 +36,11 @@ app.use('/users', usersRouter);
     console.error('Connection error', error);
   }
  
+  try {
     /* use "sequelize.sync()" method to sync */
+    await sequelize.sync();
+  }
+    
 })
 
 // catch 404 and forward to error handler
