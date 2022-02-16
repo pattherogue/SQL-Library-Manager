@@ -25,7 +25,10 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 (async () => {
-  
+  try {
+    /* use "sequelize.authenticate" method to connect */
+    await sequelize.authenticate();
+  }
 })
 
 // catch 404 and forward to error handler
