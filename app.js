@@ -46,7 +46,7 @@ app.use('/users', usersRouter);
     console.error('Sync Error - unable to sync', error);
   }
     
-})
+}) ();
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
