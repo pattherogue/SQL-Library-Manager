@@ -39,6 +39,9 @@ app.use('/users', usersRouter);
   try {
     /* use "sequelize.sync()" method to sync */
     await sequelize.sync();
+    /* log out message SUCCESSFUL */ 
+    console.log('Sync established');
+    
   }
     
 })
