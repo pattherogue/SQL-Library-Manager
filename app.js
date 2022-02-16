@@ -29,6 +29,8 @@ app.use('/users', usersRouter);
   try {
     /* use "sequelize.authenticate" method to connect */
     await sequelize.authenticate();
+    /* log out message */
+    console.log('Connection established');
   }
 })
 
