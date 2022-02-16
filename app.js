@@ -24,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+/* Test connection to the database and sync the model */
 (async () => {
   try {
     /* use "sequelize.authenticate" method to connect */
