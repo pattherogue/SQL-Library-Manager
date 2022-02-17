@@ -7,6 +7,7 @@ var Book = require('../models').Books;
 router.get('/', function(req, res, next) {
   /* comment out res.render method */
   /* res.render('index', { title: 'Express' }); */
+  res.redirect("/books")
 });
 
 module.exports = router;
