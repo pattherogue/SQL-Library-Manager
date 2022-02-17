@@ -10,4 +10,7 @@ router.get('/', function(req, res, next) {
   res.redirect("/books")
 });
 
+/* Get Books */
+router.get('/books', )
+
 module.exports = router;
