@@ -21,8 +21,10 @@ router.get('/', function(req, res, next) {
 });
 
 /* Get Books */
+/* asynchronosuly use "findAll()" method on Book model */
 router.get('/books', asyncHandler(async(req, res) => {
-  
+  /* store in variable */
+  const books = await Book.findAll();
 }))
 
 module.exports = router;
