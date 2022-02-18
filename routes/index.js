@@ -27,6 +27,11 @@ router.get('/books', asyncHandler(async(req, res) => {
   const books = await Book.findAll();
   /* log out books variable */
   console.log(books);
+  /* "res.json()" method to display on webpage */
+  res.render( /* STARTING POINT */);
+
+  /* STARTING POINT */
+
 }))
 
 module.exports = router;
