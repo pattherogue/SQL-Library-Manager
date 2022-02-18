@@ -21,6 +21,8 @@ router.get('/', function(req, res, next) {
 });
 
 /* Get Books */
-router.get('/books', asyncHandler(async()))
+router.get('/books', asyncHandler(async(req, res) => {
+  
+}))
 
 module.exports = router;
