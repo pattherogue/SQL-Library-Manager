@@ -25,6 +25,8 @@ router.get('/', function(req, res, next) {
 router.get('/books', asyncHandler(async(req, res) => {
   /* store in variable */
   const books = await Book.findAll();
+  /* log out books variable */
+  console.log(books);
 }))
 
 module.exports = router;
