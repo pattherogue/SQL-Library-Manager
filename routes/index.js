@@ -35,7 +35,9 @@ router.get('/books', asyncHandler(async(req, res) => {
 }));
 
 /* Post new book to database */
-router.post('/books/new')
+router.post('/books/new', asyncHandler(async (req, res) => {
+
+}));
 
 
 module.exports = router;
