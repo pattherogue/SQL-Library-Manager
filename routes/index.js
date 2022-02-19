@@ -13,15 +13,18 @@ function asyncHandler(cb) {
     }
   }
 }
-/* GET home page. */
+
+/* Set Up Routes */
+/* asynchronosuly use "findAll()" method on Book model */
+
+/* Home route should redirect to "/books" route. */
 router.get('/', function(req, res, next) {
   /* comment out res.render method */
   /* res.render('index', { title: 'Express' }); */
   res.redirect("/books")
 });
 
-/* Get Books */
-/* asynchronosuly use "findAll()" method on Book model */
+/* Get Books - show full list of books */
 router.get('/books', asyncHandler(async(req, res) => {
   /* store in variable */
   const books = await Book.findAll();
@@ -29,7 +32,10 @@ router.get('/books', asyncHandler(async(req, res) => {
   console.log(books);
   /* "res.json()" method to display on webpage */
   res.render('index', { books: books });
-
 }));
+
+/* Post new book to database */
+router.post('/books/new')
+
 
 module.exports = router;
