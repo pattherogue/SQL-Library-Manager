@@ -36,7 +36,8 @@ router.get('/books', asyncHandler(async(req, res) => {
 
 /* Post new book to database */
 router.post('/books/new', asyncHandler(async (req, res) => {
-
+    /* store in variable */
+  const books = await Book.findAll();
 }));
 
 
