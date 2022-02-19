@@ -39,7 +39,9 @@ router.post('/books/new', asyncHandler(async (req, res) => {
     /* store in variable */
   const books = await Book.findAll();
     /* log out books variable */
-  console.log(books);
+    console.log(books);
+    /* "res.json()" method to display on webpage */
+  res.render('new-book');
 }));
 
 
