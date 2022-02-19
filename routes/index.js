@@ -28,10 +28,8 @@ router.get('/books', asyncHandler(async(req, res) => {
   /* log out books variable */
   console.log(books);
   /* "res.json()" method to display on webpage */
-  res.render( /* STARTING POINT */);
+  res.render('index', { books: books });
 
-  /* STARTING POINT */
-
-}))
+}));
 
 module.exports = router;
