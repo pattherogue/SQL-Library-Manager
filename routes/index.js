@@ -46,7 +46,7 @@ router.get('/books/new', asyncHandler(async (req, res) => {
 
 /* post "/book/new" - post new book to database */ 
 router.post('books/new', asyncHandler(async(req, res) => {
-  
+  let book;
 }))
 
 /* Get "/books/:id" - show books in detail form */
