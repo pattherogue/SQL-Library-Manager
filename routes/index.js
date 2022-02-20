@@ -45,6 +45,8 @@ router.post('/books/new', asyncHandler(async (req, res) => {
 }));
 
 /* Get "/books/:id" - show books in detail form */
-router.get('/books/:id', )
+router.get('/books/:id', asyncHandler(async(req, res) => {
+  
+}))
 
 module.exports = router;
