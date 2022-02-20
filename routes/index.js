@@ -34,8 +34,8 @@ router.get('/books', asyncHandler(async(req, res) => {
   res.render('index', { books: books });
 }));
 
-/* Post new book to database */
-router.post('/books/new', asyncHandler(async (req, res) => {
+/* get "/books" - create new book form */
+router.get('/books/new', asyncHandler(async (req, res) => {
     /* store in variable */
   const books = await Book.findAll();
     /* log out books variable */
@@ -44,9 +44,12 @@ router.post('/books/new', asyncHandler(async (req, res) => {
   res.render('new-book');
 }));
 
+/* post "/book/new" - post new book to database */ 
+
 /* Get "/books/:id" - show books in detail form */
 router.get('/books/:id', asyncHandler(async(req, res) => {
-  
+   /* store in variable */
+   const book
 }))
 
 module.exports = router;
