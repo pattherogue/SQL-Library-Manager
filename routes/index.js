@@ -63,7 +63,7 @@ router.get('/books/:id', asyncHandler(async(req, res) => {
 
   } catch (error) {
     if (error.name === "SequelizeValidationError") {
-      
+      book = await Book.build(req.body);
     }
   }
 }));
