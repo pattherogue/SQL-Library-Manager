@@ -1,4 +1,5 @@
 var express = require('express');
+const book = require('../models/book');
 var router = express.Router();
 /* import Book model from "../models" folder */
 var Book = require('../models').Books;
@@ -64,6 +65,7 @@ router.get('/books/:id', asyncHandler(async(req, res) => {
   } catch (error) {
     if (error.name === "SequelizeValidationError") {
       book = await Book.build(req.body);
+      book.id = req.params.id;
     }
   }
 }));
