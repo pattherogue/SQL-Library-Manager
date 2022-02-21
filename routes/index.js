@@ -54,6 +54,9 @@ router.post('books/new', asyncHandler(async(req, res) => {
 router.get('/books/:id', asyncHandler(async(req, res) => {
    /* store in variable */
    const book = await BookfindByPk(req.params.id);
+   if (book) {
+     res.render();
+   }
 }))
 
 module.exports = router;
