@@ -47,12 +47,13 @@ router.get('/books/new', asyncHandler(async (req, res) => {
 /* post "/book/new" - post new book to database */ 
 router.post('books/new', asyncHandler(async(req, res) => {
   let book;
+
 }))
 
 /* Get "/books/:id" - show books in detail form */
 router.get('/books/:id', asyncHandler(async(req, res) => {
    /* store in variable */
-   const book
+   const book = await BookfindByPk(req.params.id);
 }))
 
 module.exports = router;
