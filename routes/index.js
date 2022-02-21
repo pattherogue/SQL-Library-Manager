@@ -54,10 +54,13 @@ router.post('books/new', asyncHandler(async(req, res) => {
 router.get('/books/:id', asyncHandler(async(req, res) => {
    /* store in variable */
    const book = await BookfindByPk(req.params.id);
-   if (book) {
-       /* "res.json()" method to display on webpage */
-     res.render('update-book', { book, title: book.title });
-   }
-}))
+    if (book) {
+        /* "res.json()" method to display on webpage */
+      res.render('update-book', { book, title: book.title });
+    } else {
+      res.render('page=not-found');
+    }
+  })
+)
 
 module.exports = router;
