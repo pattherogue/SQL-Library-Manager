@@ -54,13 +54,18 @@ router.post('books/new', asyncHandler(async(req, res) => {
 router.get('/books/:id', asyncHandler(async(req, res) => {
    /* store in variable */
    const book = await BookfindByPk(req.params.id);
-    if (book) {
-        /* "res.json()" method to display on webpage */
-      res.render('update-book', { book, title: book.title });
-    } else {
-      res.render('page=not-found');
+   if (book) {
+       /* "res.json()" method to display on webpage */
+     res.render('update-book', { book, title: book.title });
+   } else {
+     res.render('page=not-found');
+   }
+
+  } catch (error) {
+    if (error.name === "SequelizeValidationError") {
+      
     }
-  })
-)
+  }
+}));
 
 module.exports = router;
