@@ -55,7 +55,8 @@ router.get('/books/:id', asyncHandler(async(req, res) => {
    /* store in variable */
    const book = await BookfindByPk(req.params.id);
    if (book) {
-     res.render();
+       /* "res.json()" method to display on webpage */
+     res.render('update-book', { book, title: book.title });
    }
 }))
 
