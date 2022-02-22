@@ -57,11 +57,13 @@ router.post('books/new', asyncHandler(async(req, res) => {
       /* store in variable */
       book = await Book.build(req.body);
       /* "res.json()" method to display on webpage */
-      res.render();
+      res.render('new-book', { book, errors: error.errors, title: 'New Book'});
+    } else {
+      throw error;
     }
   }
 
-}))
+}));
 
 /* Get "/books/:id" - show books in detail form */
 router.get('/books/:id', asyncHandler(async(req, res) => {
