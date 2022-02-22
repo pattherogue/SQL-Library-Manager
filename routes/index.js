@@ -71,7 +71,7 @@ router.get('/books/:id', asyncHandler(async(req, res) => {
    /* store in variable */
    const book = await BookfindByPk(req.params.id);
    if (book) {
-       /* "res.json()" method to display on webpage */
+    /* "res.json()" method to display on webpage */
      res.render('update-book', { book, title: book.title });
    } else {
      res.render('page=not-found');
@@ -83,15 +83,13 @@ router.get('/books/:id', asyncHandler(async(req, res) => {
 router.post('/books/:id', asyncHandler(async(req, res) => {
   let book;
   try {
+    /* store in variable */
     book = await Book.findByPk(req.params.id);
     if (book) {
       await book.update(req.body);
+      /* "res.json()" method to display on webpage */
+      res.redirect('/books');
     }
-  }
-}))
-
-
-
   } catch (error) {
     if (error.name === "SequelizeValidationError") {
       book = await Book.build(req.body);
@@ -101,5 +99,9 @@ router.post('/books/:id', asyncHandler(async(req, res) => {
 
     }
   }
+}));
+
+
+
 
 module.exports = router;
