@@ -1,4 +1,5 @@
 var express = require('express');
+const res = require('express/lib/response');
 var router = express.Router();
 /* import Book model from "../models" folder */
 var Book = require('../models').Books;
@@ -81,7 +82,7 @@ router.get('/books/:id', asyncHandler(async(req, res) => {
       book = await Book.build(req.body);
       book.id = req.params.id;
       /* "res.json()" method to display on webpage */
-      
+      res.render();
 
     }
   }
