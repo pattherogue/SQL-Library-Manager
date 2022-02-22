@@ -82,6 +82,12 @@ router.get('/books/:id', asyncHandler(async(req, res) => {
 /* Post "/books/:id" - updates book info in database */
 router.post('/books/:id', asyncHandler(async(req, res) => {
   let book;
+  try {
+    book = await Book.findByPk(req.params.id);
+    if (book) {
+      await book.update(req.body);
+    }
+  }
 }))
 
 
