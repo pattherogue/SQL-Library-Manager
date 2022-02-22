@@ -89,6 +89,8 @@ router.post('/books/:id', asyncHandler(async(req, res) => {
       await book.update(req.body);
       /* "res.json()" method to display on webpage */
       res.redirect('/books');
+    } else {
+      res.render('page=not-found');
     }
   } catch (error) {
     if (error.name === "SequelizeValidationError") {
@@ -100,8 +102,5 @@ router.post('/books/:id', asyncHandler(async(req, res) => {
     }
   }
 }));
-
-
-
 
 module.exports = router;
