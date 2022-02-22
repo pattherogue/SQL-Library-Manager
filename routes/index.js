@@ -1,5 +1,4 @@
 var express = require('express');
-const book = require('../models/book');
 var router = express.Router();
 /* import Book model from "../models" folder */
 var Book = require('../models').Books;
@@ -48,6 +47,9 @@ router.get('/books/new', asyncHandler(async (req, res) => {
 /* post "/book/new" - post new book to database */ 
 router.post('books/new', asyncHandler(async(req, res) => {
   let book;
+  try {
+    book = await Book.findByPk(req.params.id);
+  }
 
 }))
 
@@ -67,6 +69,7 @@ router.get('/books/:id', asyncHandler(async(req, res) => {
       book = await Book.build(req.body);
       book.id = req.params.id;
       /* "res.json()" method to display on webpage */
+      
 
     }
   }
