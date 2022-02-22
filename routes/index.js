@@ -79,6 +79,12 @@ router.get('/books/:id', asyncHandler(async(req, res) => {
   })
 );
   
+/* Post "/books/:id" - updates book info in database */
+router.post('/books/:id', asyncHandler(async(req, res) => {
+  let book;
+}))
+
+
 
   } catch (error) {
     if (error.name === "SequelizeValidationError") {
