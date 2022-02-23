@@ -112,7 +112,10 @@ router.post('/books/:id/delete', asyncHandler(async(req, res, next) => {
     await book.destroy();
     /* "res.json()" method to display on webpage */
     res.redirect('/books');
+  } else {
+    res.render('page-not-found');
   }
-}))
+
+}));
 
 module.exports = router;
