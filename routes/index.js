@@ -104,6 +104,8 @@ router.post('/books/:id', asyncHandler(async(req, res) => {
 }));
 
 /* Post "/books/:id/delete" - deletes a book (cannot be undone) */
-
+router.post('/books/:id/delete', asyncHandler(async(req, res, next) => {
+  
+}))
 
 module.exports = router;
