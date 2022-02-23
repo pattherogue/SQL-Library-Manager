@@ -110,6 +110,8 @@ router.post('/books/:id/delete', asyncHandler(async(req, res, next) => {
   /* create new "test" book to test deleting */
   if (book) {
     await book.destroy();
+    /* "res.json()" method to display on webpage */
+    res.redirect('/books');
   }
 }))
 
