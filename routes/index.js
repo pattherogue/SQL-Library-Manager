@@ -107,6 +107,10 @@ router.post('/books/:id', asyncHandler(async(req, res) => {
 router.post('/books/:id/delete', asyncHandler(async(req, res, next) => {
   /* store in variable */
   const book = await Book.findByPk(req.params.id);
+  /* create new "test" book to test deleting */
+  if (book) {
+    await book.destroy();
+  }
 }))
 
 module.exports = router;
