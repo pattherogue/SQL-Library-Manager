@@ -53,8 +53,11 @@ app.use('/users', usersRouter);
 // catch 404 and forward to error handler
 app.use((req, res) => {
   /* create a new "Error()" */
-  /* Set status property to 404 */
   /* User friendly mesage */
+  const error = new Error("Unable to locate your desired page!")
+  /* Set status property to 404 */
+  error.status = 404;
+
 })
 // error handler
 app.use(function(err, req, res, next) {
