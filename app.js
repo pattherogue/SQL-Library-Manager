@@ -51,10 +51,11 @@ app.use('/users', usersRouter);
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
-
+app.use((req, res) => {
+  /* create a new "Error()" */
+  /* Set status property to 404 */
+  /* User friendly mesage */
+})
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
