@@ -57,8 +57,10 @@ app.use((req, res) => {
   const error = new Error("Unable to locate your desired page!")
   /* Set status property to 404 */
   error.status = 404;
+  /* render "page-not-found" */
+  res.status(404).render("page-not-found", { error })
 
-})
+});
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
