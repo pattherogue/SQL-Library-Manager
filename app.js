@@ -66,11 +66,14 @@ app.use((req, res) => {
 // Gloabl Error Handler
 /* set "err.status" to 500 */
 /* user friendly message */
-/* log status and message to console */
+
 /* render "error" template */ 
 app.use(function(err, req, res, next) {
   if (err.status === 404) {
     res.render("page-not-found", { error });
+  } else {
+    /* log status and message to console */
+    console.log('Status 500 - Global error handler');
   }
 });
 
