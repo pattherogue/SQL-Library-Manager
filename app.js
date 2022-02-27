@@ -64,10 +64,7 @@ app.use((req, res) => {
 
 
 // Gloabl Error Handler
-/* set "err.status" to 500 */
 
-
-/* render "error" template */ 
 app.use(function(err, req, res, next) {
   if (err.status === 404) {
     res.render("page-not-found", { error });
@@ -76,6 +73,10 @@ app.use(function(err, req, res, next) {
     console.log('Status 500 - Global error handler');
     /* user friendly message */
     err.message = err.message || 'Error with server';
+    /* set "err.status" to 500 */
+    /* render "error" template */ 
+    res.locals.error = err;
+    res.status(err.status || 500).render('error', { err });
 
   }
 });
