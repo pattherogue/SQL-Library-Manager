@@ -65,7 +65,7 @@ app.use((req, res) => {
 
 // Gloabl Error Handler
 /* set "err.status" to 500 */
-/* user friendly message */
+
 
 /* render "error" template */ 
 app.use(function(err, req, res, next) {
@@ -74,6 +74,9 @@ app.use(function(err, req, res, next) {
   } else {
     /* log status and message to console */
     console.log('Status 500 - Global error handler');
+    /* user friendly message */
+    err.message = err.message || 'Error with server';
+
   }
 });
 
