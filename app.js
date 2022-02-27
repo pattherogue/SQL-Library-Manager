@@ -61,7 +61,13 @@ app.use((req, res) => {
   res.status(404).render("page-not-found", { error })
 
 });
-// error handler
+
+
+// Gloabl Error Handler
+/* set "err.status" to 500 */
+/* user friendly message */
+/* log status and message to console */
+/* render "error" template */ 
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
