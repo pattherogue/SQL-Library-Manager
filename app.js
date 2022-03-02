@@ -49,9 +49,10 @@ app.use('/users', usersRouter);
     
 }) ();
 
+/* http-errors documentation */ 
 app.use((req, res, next) => {
   if (!req.user) return next(
-    createError(404, 'Login Required'));
+    createError(401, 'Login Required'));
     next();
 });
 
