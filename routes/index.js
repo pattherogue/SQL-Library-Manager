@@ -1,5 +1,4 @@
 var express = require('express');
-const res = require('express/lib/response');
 var router = express.Router();
 /* import Book model from "../models" folder */
 var Book = require('../models').Book;
