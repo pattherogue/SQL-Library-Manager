@@ -6,7 +6,7 @@ var Book = require('../models').Book;
 
 
 function asyncHandler(cb) {
-  return async(req, res, next) => {
+  return async (req, res, next) => {
     try {
       await cb (req, res, next);
     } catch (err) {
