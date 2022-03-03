@@ -26,7 +26,7 @@ router.get('/', function(req, res, next) {
 });
 
 /* Get Books - show full list of books */
-router.get('/books', asyncHandler(async(req, res) => {
+router.get('/books', asyncHandler(async (req, res) => {
   /* store in variable */
   const books = await Book.findAll();
   /* log out books variable */
