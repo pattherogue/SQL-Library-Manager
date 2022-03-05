@@ -1,5 +1,23 @@
 extends layout
 
-block content
-  h1= title
-  p Welcome to #{title}
+block content 
+  h1 Books 
+  p
+    a.button(href="/books/new") Create New Book 
+  table   
+    thread  
+      tr 
+        th Title 
+        th Author 
+        th Genre 
+        th Year 
+
+      tbody 
+      for book in books 
+        tr 
+          td 
+            a(href=`/books/$(book.id)`) #{book.title}
+
+          td #{book.authort}
+          td #{book.genre}
+          td #{book.year} 

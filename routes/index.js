@@ -21,7 +21,7 @@ function asyncHandler(cb) {
 router.get('/', function(req, res, next) {
   /* comment out res.render method */
   /* res.render('index', { title: 'Express' }); */
-  res.redirect("/books")
+  res.redirect("/books");
 });
 
 /* Get Books - show full list of books */
@@ -31,7 +31,7 @@ router.get('/books', asyncHandler(async (req, res) => {
   /* log out books variable */
   console.log(books);
   /* "res.json()" method to display on webpage */
-  res.render('index', { books: books });
+  res.render('new-book', { books, title: "Bookcs" });
 }));
 
 /* get "/books" - create new book form */
@@ -41,7 +41,7 @@ router.get('/books/new', asyncHandler(async (req, res) => {
     /* log out books variable */
     console.log(books);
     /* "res.json()" method to display on webpage */
-  res.render('new-book');
+  res.render('index', {books: {}, title: "New Book"});
 }));
 
 /* post "/book/new" - post new book to database */ 
