@@ -73,7 +73,7 @@ router.get('/books/:id', asyncHandler(async(req, res) => {
     /* "res.json()" method to display on webpage */
      res.render('update-book', { book, title: book.title });
    } else {
-     res.render('page=not-found');
+     res.render('page-not-found');
    }
   })
 );
