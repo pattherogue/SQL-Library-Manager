@@ -89,7 +89,7 @@ router.post('/books/:id', asyncHandler(async(req, res) => {
       /* "res.json()" method to display on webpage */
       res.redirect('/books');
     } else {
-      res.render('page=not-found');
+      res.render('page-not-found');
     }
   } catch (error) {
     if (error.name === "SequelizeValidationError") {
