@@ -1,10 +1,7 @@
 extends layout
 
 block conrtent
-    if(book.title)
-        h1=book.title 
-else
-    h1 Update Book 
+    h1= title 
 
 form(method="POST")
 
@@ -25,4 +22,4 @@ p
 p 
     a.button(href='/books') Cancel
 p 
-    input(type='submit' value='Delete Book' formaction=="/books" + book.id + "/delete")
+    input(type='submit' value='Delete Book')
