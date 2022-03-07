@@ -1,7 +1,12 @@
 extends layout
 
 block content
-    h1= title 
+    h1= title
+        if(errors)
+            h2.error Ooops! 
+            ul.error    
+                each error in errors 
+                    li = error.message  
 
     form(action='/books/' + book.id method="POST")
 
@@ -19,6 +24,8 @@ block content
             input#year(name='year' type='text' value=book.year)
         p 
             input(type='submit' value='Update Book')
+        p 
+            form(action="/books/" + book.id + "/delete", method='POST')
         p 
             a.button(href='/books') Cancel
         p 
