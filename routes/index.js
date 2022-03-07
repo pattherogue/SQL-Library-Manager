@@ -49,7 +49,7 @@ router.post('books/new', asyncHandler(async(req, res) => {
   let book;
   try {
      /* store in variable */
-    book = await Book.findByPk(req.params.id);
+    book = await Book.create(req.body);
      /* "res.json()" method to display on webpage */
     res.redirect('/books');
   } catch (error) {
