@@ -24,6 +24,7 @@ router.get("/", (req, res, next) => {
   res.redirect("/books");
 });
 
+
 /* Get Books - show full list of books */
 router.get('/books', asyncHandler(async (req, res) => {
   /* store in variable */
@@ -33,6 +34,8 @@ router.get('/books', asyncHandler(async (req, res) => {
   /* "res.json()" method to display on webpage */
   res.render('index', { books, title: "Bookcs" });
 }));
+
+
 
 /* get "/books" - create new book form */
 router.get('/books/new', asyncHandler(async (req, res) => {
@@ -116,5 +119,8 @@ router.post('/books/:id/delete', asyncHandler(async(req, res, next) => {
   }
 
 }));
+
+
+
 
 module.exports = router;
