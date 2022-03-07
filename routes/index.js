@@ -41,7 +41,7 @@ router.get('/books/new', asyncHandler(async (req, res) => {
     /* log out books variable */
     console.log(books);
     /* "res.json()" method to display on webpage */
-  res.render('nwe-book', {books: {}, title: "New Book"});
+    res.render('new-book');
 }));
 
 /* post "/book/new" - post new book to database */ 
