@@ -18,7 +18,7 @@ function asyncHandler(cb) {
 /* asynchronosuly use "findAll()" method on Book model */
 
 /* Home route should redirect to "/books" route. */
-router.get('/', function(req, res, next) {
+router.get("/", (req, res, next) => {
   /* comment out res.render method */
   /* res.render('index', { title: 'Express' }); */
   res.redirect("/books");
