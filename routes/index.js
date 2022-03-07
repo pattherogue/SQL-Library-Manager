@@ -31,7 +31,7 @@ router.get('/books', asyncHandler(async (req, res) => {
   /* log out books variable */
   console.log(books);
   /* "res.json()" method to display on webpage */
-  res.render('new-book', { books, title: "Bookcs" });
+  res.render('index', { books, title: "Bookcs" });
 }));
 
 /* get "/books" - create new book form */
@@ -41,7 +41,7 @@ router.get('/books/new', asyncHandler(async (req, res) => {
     /* log out books variable */
     console.log(books);
     /* "res.json()" method to display on webpage */
-  res.render('index', {books: {}, title: "New Book"});
+  res.render('nwe-book', {books: {}, title: "New Book"});
 }));
 
 /* post "/book/new" - post new book to database */ 
