@@ -6,7 +6,7 @@ block content
             h2.error Ooops! 
             ul.error    
                 each error in errors 
-                    li = error.message  
+                    li= error.message  
 
     form(action='/books/' + book.id method="POST")
 
