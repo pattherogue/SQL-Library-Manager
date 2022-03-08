@@ -50,7 +50,7 @@ router.post('/books/new', asyncHandler(async(req, res) => {
   try {
      /* store in variable */
     book = await Book.create(req.body);
-     /* "res.json()" method to display on webpage */
+    /* "res.json()" method to display on webpage */
     res.redirect('/books');
   } catch (error) {
     if (error.name === "SequelizeValidationError") {
