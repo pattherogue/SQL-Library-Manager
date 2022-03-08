@@ -45,7 +45,7 @@ router.get('/books/new', asyncHandler(async(req, res) => {
 }));
 
 /* post "/book/new" - post new book to database */ 
-router.post('books/new', asyncHandler(async(req, res) => {
+router.post('/books/new', asyncHandler(async(req, res) => {
   let book;
   try {
      /* store in variable */
