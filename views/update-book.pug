@@ -24,9 +24,9 @@ block content
             input#year(name='year' type='text' value= book.year)
         p 
             input(type='submit' value='Update Book')
-            p 
-            form(action="/books/" + book.id + "/delete", method='POST')
         p 
             a.button(href='/books') Cancel
         p 
-            input(type='submit' value='Delete Book')
+            input(type='submit' value='Delete Book' formaction="/books/" + book.id + "/delete")
+        p 
+ 
