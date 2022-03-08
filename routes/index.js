@@ -5,11 +5,11 @@ var Book = require('../models').Book;
 
 
 function asyncHandler(cb) {
-  return async (req, res, next) => {
+  return async (req,res,next) => {
     try {
-      await cb (req, res, next);
+      await cb(req,res,next);
     } catch (err) {
-      next(err);
+      res.render('error', {error:err});
     }
   }
 }
@@ -31,11 +31,11 @@ router.get('/books', asyncHandler(async (req, res) => {
   /* log out books variable */
   console.log(books);
   /* "res.json()" method to display on webpage */
-  res.render('index', { books, title: "Bookcs" });
+  res.render('index', { books, title: "Books" });
 }));
 
 /* get "/books" - create new book form */
-router.get('/books/new', asyncHandler(async (req, res) => {
+router.get('/books/new', asyncHandler(async(req, res) => {
     /* store in variable */
   const books = await Book.findAll();
     /* log out books variable */
