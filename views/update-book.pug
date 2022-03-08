@@ -8,7 +8,7 @@ block content
                 each error in errors 
                     li= error.message  
 
-    form(action='/books/' + book.id method='POST')
+    form(method='POST')
 
         p 
             label(for='title') Title 
