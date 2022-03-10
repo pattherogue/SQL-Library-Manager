@@ -74,7 +74,7 @@ app.use((req, res) => {
 
 // Gloabl Error Handler
 
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next) => {
   if (err.status === 404) {
     res.render("page-not-found", { error });
   } else {
