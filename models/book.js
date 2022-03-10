@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       type: Sequelize.STRING,
       allowNull: false,
       /* add Sequlize ORM validation w/ error msg */
-      validation: {
+      validate: {
         notNull: {
           msg: 'Input for "title" needed',
         },
@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
       type: Sequelize.STRING,
       allowNull: false,
       /* add Sequlize ORM validation w/ error msg */
-      validation: {
+      validate: {
         notNull: {
           msg: 'Input for "author" needed',
         },
