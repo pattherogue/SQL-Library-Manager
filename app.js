@@ -47,7 +47,7 @@ app.use('/users', usersRouter);
     console.error('Sync Error - unable to sync', error);
   }
     
-}) ();
+})();
 
 /* http-errors documentation */ 
 app.use((req, res, next) => {
