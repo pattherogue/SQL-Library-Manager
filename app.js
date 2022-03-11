@@ -49,13 +49,6 @@ app.use('/users', usersRouter);
     
 })();
 
-/* http-errors documentation */ 
-app.use((req, res, next) => {
-  if (!req.user) return next(
-    createError(404, 'Login Required'));
-    next();
-});
-
 const port = 3000;
 
 
@@ -76,7 +69,7 @@ app.use((req, res) => {
 
 app.use((err, req, res, next) => {
   if (err.status === 404) {
-    res.render("page-not-found", { error });
+    res.render("page-not-found", { err });
   } else {
     /* log status and message to console */
     console.log('Status 500 - Global error handler');

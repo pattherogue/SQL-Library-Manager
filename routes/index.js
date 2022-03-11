@@ -66,14 +66,14 @@ router.post('/books/new', asyncHandler(async(req, res) => {
 }));
 
 /* Get "/books/:id" - show books in detail form */
-router.get('/books/:id', asyncHandler(async(req, res) => {
+router.get('/books/:id', asyncHandler(async(req, res, next) => {
    /* store in variable */
    const book = await Book.findByPk(req.params.id);
    if (book) {
     /* "res.json()" method to display on webpage */
      res.render('update-book', { book, title: book.title });
    } else {
-     res.render('page-not-found');
+     res.render();
    }
   })
 );
