@@ -51,17 +51,11 @@ app.use('/users', usersRouter);
 
 const port = 3000;
 
-
-// catch 404 and forward to error handler
-app.use((req, res) => {
-  /* create a new "Error()" */
-  /* User friendly mesage */
-  const error = new Error("Unable to locate your desired page!")
-  /* Set status property to 404 */
-  error.status = 404;
-  /* render "page-not-found" */
-  res.status(404).render("page-not-found", { error })
-
+/* 404 error handle */
+app.use((req, res, next) => {
+  const err = new Error('Not Found');
+  err.status = 404;
+  next(err);
 });
 
 
